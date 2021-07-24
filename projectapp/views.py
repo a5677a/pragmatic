@@ -20,6 +20,7 @@ class ProjectCreateView(CreateView):
     def get_success_url(self):
         return reverse('projectapp:detail', kwargs={'pk': self.object.pk})
 
+
 class ProjectDetailView(DetailView, MultipleObjectMixin):
     model = Project
     context_object_name = 'target_project'
@@ -40,6 +41,7 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
         return super(ProjectDetailView, self).get_context_data(object_list=object_list,
                                                                subscription=subscription,
                                                                **kwargs)
+
 
 class ProjectListView(ListView):
     model = Project

@@ -30,7 +30,7 @@
   {% if project_list %}
   <div class="container">
     {% for project in project_list %}
-    <a href="{% url 'projectapp:detail' pk=project.pk">
+    <a href="{% url 'projectapp:detail' pk=project.pk %}">
       {% include 'snippets/card_Project.html' with project=project %}
     </a>
     {% endfor %}
